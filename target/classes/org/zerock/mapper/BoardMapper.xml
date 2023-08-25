@@ -6,7 +6,7 @@
 
 <select id="getList" resultType="org.zerock.domain.BoardVO">
 	<![CDATA[
-		select * from tbl_board where bno > 0
+		SELECT * FROM TBL_BOARD WHERE BNO > 0
 	]]>
 </select>
 
