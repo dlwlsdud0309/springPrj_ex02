@@ -11,4 +11,8 @@ public interface BoardMapper {
 	
 //	@Select("select * from tbl_board where bno > 0")  //XML에 SQL문을 작성하였으니 주석처리
 	public List<BoardVO> getList();
+	
+	public void insert(BoardVO board);
+	
+	public void insertSelectKey(BoardVO board);
 }
