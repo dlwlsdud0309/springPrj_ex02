@@ -27,12 +27,25 @@ public class BoardMapperTests {
 	public void testInsert() {
 		
 		BoardVO board = new BoardVO();
-		board.setTitle("새로 작성하는 글");
-		board.setContent("새로 작성하는 내용");
-		board.setWriter("newbie");
+		board.setTitle("새로 작성하는 글2");
+		board.setContent("새로 작성하는 내용2");
+		board.setWriter("newbie2");
 		
 		mapper.insert(board);
 		
 		log.info(board); //Lomok이 만들어주는 toString()을 이용해서 bno 멤버 변수(인스턴스 변수)의 값을 알아보기 위함임
+	}
+	
+	@Test
+	public void testInsertSelectKey() {
+		
+		BoardVO board = new BoardVO();
+		board.setTitle("새로 작성하는 글 select key2");
+		board.setContent("새로 작성하는 내용 select key2");
+		board.setWriter("newbie22");
+		
+		mapper.insertSelectKey(board);
+		
+		log.info(board);
 	}
 }
