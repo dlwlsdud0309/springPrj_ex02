@@ -15,6 +15,7 @@ import lombok.extern.log4j.Log4j;
 @Service
 @AllArgsConstructor
 public class BoardServiceImpl implements BoardService{
+	//BoardService 인터페이스를 구현할 구현체 : BoardServiceImpl
 	
 	@Setter(onMethod_ = @Autowired)
 	private BoardMapper mapper;
@@ -28,9 +29,10 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public BoardVO get(Long bno) {
-		// TODO Auto-generated method stub
-		return null;
+	public BoardVO get(Long bno) { //조회 작업의 구현
+		
+		log.info("get...." + bno);
+		return mapper.read(bno);
 	}
 
 	@Override
@@ -46,7 +48,7 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public List<BoardVO> getList() {
+	public List<BoardVO> getList() { //목록(리스트) 작업의 구현
 		
 		log.info("getList.......");
 		return mapper.getList();

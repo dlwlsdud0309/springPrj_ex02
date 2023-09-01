@@ -40,7 +40,13 @@ public class BoardServiceTests {
 	}
 	
 	@Test
-	public void testGetList() {
+	public void testGetList() { //목록(리스트) 작업 테스트
 		service.getList().forEach(board -> log.info(board));
+	}
+	
+	@Test
+	public void testGet() { //조회 작업 테스트
+		
+		log.info(service.get(13L));
 	}
 }
