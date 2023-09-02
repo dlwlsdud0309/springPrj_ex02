@@ -49,4 +49,10 @@ public class BoardServiceTests {
 		
 		log.info(service.get(13L));
 	}
+	
+	@Test
+	public void testDelete() {
+		
+		log.info("REMOVE RESULT : "+service.remove(2L));
+	}
 }
