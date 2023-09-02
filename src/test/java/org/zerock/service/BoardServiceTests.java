@@ -54,5 +54,18 @@ public class BoardServiceTests {
 	public void testDelete() {
 		
 		log.info("REMOVE RESULT : "+service.remove(2L));
-	}
+	} //testDelete의 경우, 해당 게시물이 존재할 때 true를 반환
+	
+	@Test
+	public void testUpdate() {
+		
+		BoardVO board = service.get(1L);
+		
+		if(board == null) {
+			return;
+		}
+		
+		board.setTitle("20230902제목 수정합니다.");
+		log.info("MODIFY RESULT : "+service.modify(board));
+	} //testUpdate의 경우 특정한 게시물을 먼저 조회하고, title 값을 수정한 후 이를 업데이트 함
 }
