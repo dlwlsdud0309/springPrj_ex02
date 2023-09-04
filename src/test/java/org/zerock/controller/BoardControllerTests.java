@@ -45,4 +45,18 @@ public class BoardControllerTests {
 			.getModelAndView()
 			.getModelMap());
 	}
+	
+	@Test
+	public void testRegister() throws Exception{
+		
+		//MockMvcRequestBuilders.post()를 이용하면 POST방식으로 데이터를 전달할 수 있다.
+		//또한 param을 이용해서 전달해야 하는 파라미터들을 지정할 수 있다.
+		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/board/register")
+				.param("title", "테스트 새글 제목2")
+				.param("content", "테스트 새글 내용2")
+				.param("writer", "글번호테스트용")
+				).andReturn().getModelAndView().getViewName();
+		
+		log.info(resultPage);
+	}
 }
