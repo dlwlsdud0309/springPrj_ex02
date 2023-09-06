@@ -43,4 +43,5 @@ public class BoardController { //BoardController는 BoardService에 대해서 �
 		log.info("/get");
 		model.addAttribute("board", service.get(bno));
 	}
+	
 }
