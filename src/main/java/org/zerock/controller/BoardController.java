@@ -53,4 +53,14 @@ public class BoardController { //BoardController는 BoardService에 대해서 �
 		}
 		return "redirect:/board/list";
 	}
+	
+	//삭제처리는 반드시 Post방식으로
+	@PostMapping("/remove")
+	public String remove(@RequestParam("bno") Long bno, RedirectAttributes rttr) {
+		log.info("remove..."+bno);
+		if(service.remove(bno)) {
+			rttr.addFlashAttribute("result", "success");
+		}
+		return "redirect:/board/list";
+	}
 }
