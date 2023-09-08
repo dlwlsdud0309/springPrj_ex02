@@ -16,6 +16,8 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<!-- 스프링 MVC의 JSP를 처리하는 설정 -->
+	<!-- 스프링 MVC의 설정에서 화면설정은 ViewResolver라는 객체를 통해서 이루어 지는데 /WEB-INF/views 폴더를 이용하는 것을 확인할 수 있음 -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
