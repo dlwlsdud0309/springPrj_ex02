@@ -63,4 +63,10 @@ public class BoardController { //BoardController는 BoardService에 대해서 �
 		}
 		return "redirect:/board/list";
 	}
+	
+	//보여주는 역할만 함
+	@GetMapping("/register")
+	public void register() {
+		
+	}
 }
