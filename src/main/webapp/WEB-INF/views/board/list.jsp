@@ -53,6 +53,12 @@
 <!-- /.row -->
 
 <%@include file="../includes/footer.jsp"%>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var result = '<c:out value="${result}"/>';
+	});
+</script>
 </body>
 
 </html>
