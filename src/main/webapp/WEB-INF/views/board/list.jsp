@@ -87,7 +87,7 @@
 		var result = '<c:out value="${result}" />';
 		checkModal(result);
 		
-		funtion checkModal(result){
+		function checkModal(result){
 			if(result === ''){
 				return;
 			}
