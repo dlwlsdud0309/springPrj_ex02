@@ -21,26 +21,29 @@
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 			
-				<div class="panel-heading">Board Register</div>
+				<div class="panel-heading">Board Read Page</div>
 				<!-- /.panel-heading -->
 				<div class="panel-body">
-				
-					<form role="form" action="/board/register" method="post">
-						<div class="form-group">
-							<label>Title</label> <input class="form-control" name="title" />
-						</div>
-						
-						<div class="form-group">
-							<label>Text area</label>
-							<textarea name="content" rows="3" class="form-control"></textarea>
-						</div>
-						
-						<div class="form-group">
-							<label>Writer</label> <input class="form-control" name="writer" />
-						</div>
-						<button type="submit" class="btn btn-default">Submit Button</button>
-						<button type="reset" class="btn btn-default">Reset Button</button>						
-					</form>
+
+					<div class="form-group">
+						<label>Bno</label> <input class="form-control" name="bno"
+						value="<c:out value='${board.bno }' />" readonly="readonly" />
+					</div>
+					<div class="form-group">
+						<label>Title</label> <input class="form-control" name="title"
+						value="<c:out value='${board.title }' />" readonly="readonly" />
+					</div>		
+					<div class="form-group">
+						<label>Text area</label>
+						<textarea name="content" rows="3" class="form-control" readonly="readonly">
+						<c:out value="${board.content }" /></textarea>
+					</div>
+					<div class="form-group">
+						<label>Writer</label> <input class="form-control" name="writer"
+						value='<c:out value="${board.writer }" />' readonly="readonly" />
+					</div>
+					<button data-oper="modify" class="btn btn-default">Modify</button>
+					<button data-oper="list" class="btn btn-info">List</button>
 					
 				</div>
 				<!-- /.panel-body -->
