@@ -96,7 +96,7 @@ public class BoardControllerTests {
 	
 	@Test
 	public void testListPaging() throws Exception{
-		//pageNum : 페이지 번호, amount : 한 페이지당 몇개의 데이터를 보여줄 것인지
+		//pageNum : 페이지 번호, amount : 한 페이지당 보여주는 데이터 개수
 		log.info(mockMvc.perform(
 				MockMvcRequestBuilders.get("/board/list")
 				.param("pageNum", "2")
