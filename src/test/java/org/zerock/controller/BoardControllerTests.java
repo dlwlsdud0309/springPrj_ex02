@@ -93,4 +93,14 @@ public class BoardControllerTests {
 				).andReturn().getModelAndView().getViewName();
 		log.info(resultPage);
 	}
+	
+	@Test
+	public void testListPaging() throws Exception{
+		//pageNum : 페이지 번호, amount : 한 페이지당 몇개의 데이터를 보여줄 것인지
+		log.info(mockMvc.perform(
+				MockMvcRequestBuilders.get("/board/list")
+				.param("pageNum", "2")
+				.param("amount", "50"))
+				.andReturn().getModelAndView().getModelMap());
+	}
 }
