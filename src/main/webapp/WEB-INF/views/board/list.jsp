@@ -140,7 +140,7 @@
 		var actionForm = $("#actionForm");
 		
 		$(".paginate_button a").on("click", function(e) {
-			e.preventDefault();
+			e.preventDefault(); /* a태그를 클릭해도 페이지 이동이 없도록 preventDefault() 처리 */
 			console.log('click');
 			actionForm.find("input[name='pageNum']").val($(this).attr("href"));
 		});
