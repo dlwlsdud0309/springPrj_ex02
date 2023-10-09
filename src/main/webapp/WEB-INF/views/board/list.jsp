@@ -90,6 +90,12 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
+	
+	<!-- a태그가 원래의 동작을 못하도록 JavaScript 처리 p.311 -->
+	<form id="actionForm" action="/board/list" method="get">
+		<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }" />
+		<input type="hidden" name="amount" value="${pageMaker.cri.amount }" />
+	</form><!-- a태그의 JavaScript 처리 -->
 				
 			</div>
 			<!-- /.panel-body -->
@@ -128,6 +134,15 @@
 		
 		$("#regBtn").on("click", function(){
 			self.location = "/board/register";
+		});
+		
+		/* a태그가 원래의 동작을 못하도록 JavaScript 처리 p.312 */
+		var actionForm = $("#actionForm");
+		
+		$(".paginate_button a").on("click", function(e) {
+			e.preventDefault();
+			console.log('click');
+			actionForm.find("input[name='pageNum']").val($(this).attr("href"));
 		});
 	});
 </script>
