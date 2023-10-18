@@ -10,7 +10,7 @@
 	</context-param>
 	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
-	<listener>
+	<listener> <!-- ContextLoaderListener는 contextConfigLocation 설정 파일을 읽고 RootApplicationContext 파일을 생성 -->
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
