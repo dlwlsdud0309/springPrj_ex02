@@ -15,7 +15,7 @@
 	</listener>
 
 	<!-- Processes application requests -->
-	<servlet>
+	<servlet> <!-- 아래의 DispatcherServlet 설정 파일들은 WebApplicationContext를 생성하게 된다. -->
 		<servlet-name>appServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
